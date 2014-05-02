@@ -1,0 +1,137 @@
+var flag=1;
+//Specify the slider's width (in pixels)
+var sliderwidth="190px"
+//Specify the slider's height
+var sliderheight="155px"
+//Specify the slider's slide speed (larger is faster 1-10)
+var slidespeed=1
+//configure background color:
+//slidebgcolor=""
+//Specify the slider's images
+var leftrightslide=new Array()
+var finalslide=''
+leftrightslide[0]='<TABLE width="100%" align="center"><TR><TD><A HREF="cp-product.html#cp-extension-nipple-extra-heavy" rel="http://3.imimg.com/data3/FR/YG/MY-3132640/c-p-extension-nipple-125x125.jpg" CLASS="hni_s vr_s scr arw_no_s" TARGET="_top"><IMG SRC="" rel="http://3.imimg.com/data3/FR/YG/MY-3132640/c-p-extension-nipple-125x125.jpg" ALT="CP Extension .." class="cpo_s"></A></TD><TD><A HREF="rack-bolt.html#rack-bolt-for-ewc-and-wall-hung" rel="http://3.imimg.com/data3/PF/HU/MY-3132640/rack-bolt-for-ewc-500x500-125x125.jpg" CLASS="hni_s vr_s scr arw_no_s" TARGET="_top"><IMG SRC="" rel="http://3.imimg.com/data3/PF/HU/MY-3132640/rack-bolt-for-ewc-500x500-125x125.jpg" ALT="Rack Bolt for.." class="cpo_s"></A></TD><TD><A HREF="cp-brass-taper-cock.html#brass-taper-cock" rel="http://3.imimg.com/data3/GP/IO/MY-3132640/taper-cock-500x500-125x125.jpg" CLASS="hni_s vr_s scr arw_no_s" TARGET="_top"><IMG SRC="" rel="http://3.imimg.com/data3/GP/IO/MY-3132640/taper-cock-500x500-125x125.jpg" ALT="Brass Taper C.." class="cpo_s"></A></TD><TD><A HREF="brass-metal-product.html#brass-ball-valve" rel="http://3.imimg.com/data3/RH/JR/MY-3132640/brass-ball-valve-125x125.jpg" CLASS="hni_s vr_s scr arw_no_s" TARGET="_top"><IMG SRC="" rel="http://3.imimg.com/data3/RH/JR/MY-3132640/brass-ball-valve-125x125.jpg" ALT="Brass Ball Va.." class="cpo_s"></A></TD><TD><A HREF="brass-product.html#brass-tee" rel="http://3.imimg.com/data3/JY/AP/MY-3132640/brass-tee-250x250-125x125.jpg" CLASS="hni_s vr_s scr arw_no_s" TARGET="_top"><IMG SRC="" rel="http://3.imimg.com/data3/JY/AP/MY-3132640/brass-tee-250x250-125x125.jpg" ALT="Brass Tee" class="cpo_s"></A></TD><TD><A HREF="jet-spray-set.html#jet-spray-set-crystal" rel="http://3.imimg.com/data3/SI/OP/MY-3132640/jet-spray-set-crystal-suitable-for-imported-seats-250x250-125x125.jpg" CLASS="hni_s vr_s scr arw_no_s" TARGET="_top"><IMG SRC="" rel="http://3.imimg.com/data3/SI/OP/MY-3132640/jet-spray-set-crystal-suitable-for-imported-seats-250x250-125x125.jpg" ALT="Jet Spray Set.." class="cpo_s"></A></TD><TD><A HREF="connection-pipe.html#ms-ss-wired-inlet-pipe" rel="http://3.imimg.com/data3/JK/IW/MY-3132640/ms-ss-wired-inlet-pipe-125x125.jpg" CLASS="hni_s vr_s scr arw_no_s" TARGET="_top"><IMG SRC="" rel="http://3.imimg.com/data3/JK/IW/MY-3132640/ms-ss-wired-inlet-pipe-125x125.jpg" ALT="MS & SS Wired.." class="cpo_s"></A></TD></tr><tr><TD align="CENTER"><A HREF="cp-product.html#cp-extension-nipple-extra-heavy" TARGET="_top" CLASS="hpr_s vr_s fn_s">CP Extension ..</A></TD><TD align="CENTER"><A HREF="rack-bolt.html#rack-bolt-for-ewc-and-wall-hung" TARGET="_top" CLASS="hpr_s vr_s fn_s">Rack Bolt for..</A></TD><TD align="CENTER"><A HREF="cp-brass-taper-cock.html#brass-taper-cock" TARGET="_top" CLASS="hpr_s vr_s fn_s">Brass Taper C..</A></TD><TD align="CENTER"><A HREF="brass-metal-product.html#brass-ball-valve" TARGET="_top" CLASS="hpr_s vr_s fn_s">Brass Ball Va..</A></TD><TD align="CENTER"><A HREF="brass-product.html#brass-tee" TARGET="_top" CLASS="hpr_s vr_s fn_s">Brass Tee</A></TD><TD align="CENTER"><A HREF="jet-spray-set.html#jet-spray-set-crystal" TARGET="_top" CLASS="hpr_s vr_s fn_s">Jet Spray Set..</A></TD><TD align="CENTER"><A HREF="connection-pipe.html#ms-ss-wired-inlet-pipe" TARGET="_top" CLASS="hpr_s vr_s fn_s">MS & SS Wired..</A></TD></TR></TABLE>'
+
+//Specify gap between each image (use HTML):
+var imagegap=""
+
+//Specify pixels gap between each slideshow rotation (use integer):
+var slideshowgap=0
+
+
+////NO NEED TO EDIT BELOW THIS LINE////////////
+
+var copyspeed=slidespeed
+leftrightslide='<nobr>'+leftrightslide.join(imagegap)+'</nobr>'
+var iedom=document.all||document.getElementById
+if (iedom)
+document.write('<span id="temp" style="visibility:hidden;position:absolute;top:-100px;left:-50000px">'+leftrightslide+'</span>')
+var actualwidth=''
+var cross_slide, ns_slide
+
+function fillup(){
+if (iedom){
+cross_slide=document.getElementById? document.getElementById("test2") : document.all.test2
+cross_slide2=document.getElementById? document.getElementById("test3") : document.all.test3
+cross_slide.innerHTML=cross_slide2.innerHTML=leftrightslide
+actualwidth=document.all? cross_slide.offsetWidth : document.getElementById("temp").offsetWidth
+cross_slide2.style.left=actualwidth+slideshowgap+"px"
+}
+else if (document.layers){
+ns_slide=document.ns_slidemenu.document.ns_slidemenu2
+ns_slide2=document.ns_slidemenu.document.ns_slidemenu3
+ns_slide.document.write(leftrightslide)
+ns_slide.document.close()
+actualwidth=ns_slide.document.width
+ns_slide2.left=actualwidth+slideshowgap
+ns_slide2.document.write(leftrightslide)
+ns_slide2.document.close()
+}
+lefttime=setInterval("slideleft()",30)
+}
+
+function slideleft(){
+if (iedom){
+if (parseInt(cross_slide.style.left)>(actualwidth*(-1)+8))
+cross_slide.style.left=parseInt(cross_slide.style.left)-copyspeed+"px"
+else
+cross_slide.style.left=parseInt(cross_slide2.style.left)+actualwidth+slideshowgap+"px"
+
+if (parseInt(cross_slide2.style.left)>(actualwidth*(-1)+8))
+cross_slide2.style.left=parseInt(cross_slide2.style.left)-copyspeed+"px"
+else
+cross_slide2.style.left=parseInt(cross_slide.style.left)+actualwidth+slideshowgap+"px"
+
+}
+else if (document.layers){
+if (ns_slide.left>(actualwidth*(-1)+8))
+ns_slide.left-=copyspeed
+else
+ns_slide.left=ns_slide2.left+actualwidth+slideshowgap
+
+if (ns_slide2.left>(actualwidth*(-1)+8))
+ns_slide2.left-=copyspeed
+else
+ns_slide2.left=ns_slide.left+actualwidth+slideshowgap
+}
+}
+
+
+if (iedom||document.layers){
+with (document){
+document.write('<table class="w9_s"><td>')
+if (iedom){
+write('<div style="position:relative;width:'+sliderwidth+';height:'+sliderheight+';overflow:hidden">')
+write('<div style="position:absolute;width:'+sliderwidth+';height:'+sliderheight+';" onMouseover="copyspeed=0" onMouseout="stop1()" onclick="stop()">')
+write('<div id="test2" style="position:absolute;left:0px;top:0px"></div>')
+write('<div id="test3" style="position:absolute;left:-1000px;top:0px"></div>')
+write('</div></div>')
+}
+else if (document.layers){
+write('<ilayer width='+sliderwidth+' height='+sliderheight+' name="ns_slidemenu">')
+write('<layer name="ns_slidemenu2" left=0 top=0 onMouseover="copyspeed=0" onMouseout="stop1()"></layer>')
+write('<layer name="ns_slidemenu3" left=0 top=0 onMouseover="copyspeed=0" onMouseout="stop1()"></layer>')
+write('</ilayer>')
+}
+document.write('</td></table>')
+}
+}
+
+img11 = "ts/play.gif"; 
+img12 = "ts/play1.gif";
+
+img21 = "ts/stop.gif"; 
+img22 = "ts/stop1.gif";
+
+function stop1()
+{
+if(flag==1)
+{
+copyspeed=slidespeed
+}
+else
+{
+copyspeed=0;
+}
+}
+
+function stop()
+{
+	if(flag==1)
+	{
+		copyspeed=0
+		flag=0
+	    document.getElementById("playstop").className="ply fr sprt cpo";
+	    document.getElementById("playstop1").className="stp1 fr sprt cpo";
+	}
+}
+function play()
+{
+   if(flag==0)
+   {
+      copyspeed=slidespeed
+      flag=1;
+      document.getElementById("playstop").className="ply1 fr sprt cpo";
+      document.getElementById("playstop1").className="stp fr sprt cpo";
+   }
+}
